@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:41 (IST) | ci: add GitHub Actions workflow to deploy frontend to GitHub Pages
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: .github/workflows/deploy-pages.yml, .github/workflows/.gitkeep
+- What and why: Configure automated GitHub Actions workflow to compile Tailwind CSS and deploy frontend to GitHub Pages on push to main.
+- How it was verified: Verified workflow syntax and step configurations.
+
 ### 2026-10-24 23:30 (IST) | feat: create storefront homepage HTML layout and system health dashboard
 - Author: PriyanshuKSharma
 - Issue: #4
