@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:50 (IST) | feat: create order history script module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/orders.js
+- What and why: Fetch user orders from backend /api/orders or local storage fallback, render order cards with status badges and provision progress.
+- How it was verified: Verified with ESLint and simulated order card rendering.
+
 ### 2026-10-24 23:49 (IST) | feat: create order history HTML page
 - Author: PriyanshuKSharma
 - Issue: #4
