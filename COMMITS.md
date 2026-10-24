@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:55 (IST) | feat: enhance catalog homepage with search filtering and category navigation
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/index.html
+- What and why: Enhance storefront homepage with interactive search bar, category pill filters, sorting options, and dynamic product grid.
+- How it was verified: Verified layout rendering and clean Tailwind utility styling.
+
 ### 2026-10-24 23:54 (IST) | feat: create user registration script module
 - Author: PriyanshuKSharma
 - Issue: #4

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ShopScale e-commerce storefront for benchmarking cloud auto-scaling, containerization, and resilience patterns on AWS.">
-  <title>ShopScale - Cloud Benchmark Storefront</title>
+  <title>ShopScale - Cloud Infrastructure Storefront</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body class="flex flex-col min-h-full font-sans text-slate-800 antialiased">
@@ -14,7 +14,7 @@
       <div class="flex items-center justify-between h-16">
         <!-- Brand Logo -->
         <div class="flex items-center space-x-3">
-          <a href="/" class="flex items-center space-x-2 text-slate-900 font-bold text-xl tracking-tight hover:text-emerald-600 transition-colors">
+          <a href="./index.html" class="flex items-center space-x-2 text-slate-900 font-bold text-xl tracking-tight hover:text-emerald-600 transition-colors">
             <svg class="w-8 h-8 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
               <path d="M3 6h18"/>
@@ -47,7 +47,9 @@
 
         <!-- Navigation Links & Actions -->
         <nav class="flex items-center space-x-6">
-          <a href="/" id="nav-catalog-link" class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Catalog</a>
+          <a href="./index.html" id="nav-catalog-link" class="text-sm font-semibold text-emerald-600 transition-colors">Catalog</a>
+          <a href="./orders.html" id="nav-orders-link" class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Orders</a>
+          <a href="./login.html" id="nav-login-link" class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Sign In</a>
           <a href="/api/docs" target="_blank" rel="noopener noreferrer" id="nav-api-docs-link" class="text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors flex items-center space-x-1">
             <span>API Docs</span>
             <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -57,7 +59,7 @@
             </svg>
           </a>
           <!-- Cart Button -->
-          <a href="#cart" id="nav-cart-btn" class="relative inline-flex items-center p-2 text-slate-700 hover:text-emerald-600 transition-colors">
+          <a href="./cart.html" id="nav-cart-btn" class="relative inline-flex items-center p-2 text-slate-700 hover:text-emerald-600 transition-colors">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="8" cy="21" r="1"/>
               <circle cx="19" cy="21" r="1"/>
@@ -72,7 +74,7 @@
 
   <!-- Simulated Benchmark Notice Banner -->
   <div class="bg-indigo-900 text-indigo-100 px-4 py-2 text-xs font-medium text-center">
-    <span>Simulated Benchmark Environment - All transactions, payments, and inventory deductions are synthetic.</span>
+    <span>Simulated Benchmark Environment - All transactions, cloud resources, and payments are synthetic.</span>
   </div>
 
   <!-- Main Content Area -->
@@ -132,77 +134,36 @@
     <section id="catalog-section" class="space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Product Catalog</h2>
-          <p class="text-sm text-slate-500 mt-1">High-concurrency e-commerce items under synthetic load simulation.</p>
+          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Cloud Infrastructure Catalog</h2>
+          <p id="catalog-result-count" class="text-sm text-slate-500 mt-1">Showing all products</p>
         </div>
-        <div class="flex items-center space-x-2">
-          <button class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-900 text-white">All Categories</button>
-          <button class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50">Electronics</button>
-          <button class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50">Apparel</button>
+
+        <!-- Sort Selector -->
+        <div class="flex items-center space-x-3">
+          <label for="sort-select" class="text-xs font-medium text-slate-600">Sort by:</label>
+          <select id="sort-select" class="text-xs border border-slate-300 rounded-lg py-1.5 px-2.5 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <option value="featured">Featured Tier</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name">Product Name (A-Z)</option>
+          </select>
         </div>
       </div>
 
-      <!-- Product Grid Container -->
-      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Card 1 -->
-        <article class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between p-5 space-y-4">
-          <div class="space-y-2">
-            <span class="inline-block px-2 py-0.5 text-xs font-semibold text-emerald-700 bg-emerald-50 rounded">In Stock: 500</span>
-            <h3 class="text-base font-semibold text-slate-900">Cloud Compute Node Instance</h3>
-            <p class="text-xs text-slate-500 line-clamp-2">High-performance synthetic compute unit designed for distributed stress benchmarking.</p>
-          </div>
-          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-lg font-bold text-slate-900">$49.99</span>
-            <button class="px-3.5 py-1.5 text-xs font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors">
-              Add to Cart
-            </button>
-          </div>
-        </article>
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 pt-2">
+        <button data-category-filter="all" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-900 text-white transition-colors">All Categories</button>
+        <button data-category-filter="compute" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors">Cloud Compute</button>
+        <button data-category-filter="database" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors">Databases</button>
+        <button data-category-filter="networking" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors">Networking</button>
+        <button data-category-filter="storage" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors">Storage</button>
+        <button data-category-filter="security" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors">Security</button>
+        <button data-category-filter="monitoring" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 transition-colors">Monitoring</button>
+      </div>
 
-        <!-- Card 2 -->
-        <article class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between p-5 space-y-4">
-          <div class="space-y-2">
-            <span class="inline-block px-2 py-0.5 text-xs font-semibold text-emerald-700 bg-emerald-50 rounded">In Stock: 250</span>
-            <h3 class="text-base font-semibold text-slate-900">Managed Connection Pool Accelerator</h3>
-            <p class="text-xs text-slate-500 line-clamp-2">Low-latency async proxy engine engineered for sustained MySQL connection multiplexing.</p>
-          </div>
-          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-lg font-bold text-slate-900">$89.00</span>
-            <button class="px-3.5 py-1.5 text-xs font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors">
-              Add to Cart
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between p-5 space-y-4">
-          <div class="space-y-2">
-            <span class="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 bg-amber-50 rounded">Low Stock: 15</span>
-            <h3 class="text-base font-semibold text-slate-900">Edge Content Cache Module</h3>
-            <p class="text-xs text-slate-500 line-clamp-2">Static asset offloading module testing cache invalidation under dynamic surge traffic.</p>
-          </div>
-          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-lg font-bold text-slate-900">$129.50</span>
-            <button class="px-3.5 py-1.5 text-xs font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors">
-              Add to Cart
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between p-5 space-y-4">
-          <div class="space-y-2">
-            <span class="inline-block px-2 py-0.5 text-xs font-semibold text-emerald-700 bg-emerald-50 rounded">In Stock: 1000</span>
-            <h3 class="text-base font-semibold text-slate-900">Synthetic Traffic Generation Probe</h3>
-            <p class="text-xs text-slate-500 line-clamp-2">Programmable synthetic payload runner for measuring p95 and p99 latency percentiles.</p>
-          </div>
-          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-            <span class="text-lg font-bold text-slate-900">$19.99</span>
-            <button class="px-3.5 py-1.5 text-xs font-medium text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors">
-              Add to Cart
-            </button>
-          </div>
-        </article>
+      <!-- Dynamic Product Grid Container -->
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Rendered dynamically by index.js -->
       </div>
     </section>
   </main>
