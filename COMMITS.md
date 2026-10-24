@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:38 (IST) | feat: configure async sqlalchemy engine and database connectivity probe
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/database.py
+- What and why: Establish async SQLAlchemy 2.0 engine using aiomysql driver, session generator, and async connection check.
+- How it was verified: Tested async connection probe handling disconnected state gracefully.
+
 ### 2026-10-24 22:37 (IST) | feat: implement backend settings configuration with pydantic-settings
 - Author: PriyanshuKSharma
 - Issue: #5
