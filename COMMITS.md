@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:23 (IST) | chore: remove frontend placeholder gitkeep files
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/.gitkeep, frontend/src/.gitkeep
+- What and why: Remove placeholder .gitkeep files as frontend public and src assets are established.
+- How it was verified: Verified removal with git status.
+
 ### 2026-10-24 22:48 (IST) | docs: format Stage 2 user-visible updates in UPDATES.md
 - Author: PriyanshuKSharma
 - Issue: #5
