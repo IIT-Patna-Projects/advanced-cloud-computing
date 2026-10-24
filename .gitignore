@@ -68,3 +68,6 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+#Unwanted files
+~$ShopScale.pptx
