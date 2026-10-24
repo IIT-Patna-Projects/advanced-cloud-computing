@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:35 (IST) | chore: remove backend placeholder gitkeep files
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/.gitkeep, backend/tests/.gitkeep
+- What and why: Remove placeholder .gitkeep files as backend app and test packages are populated.
+- How it was verified: Verified removal with git status and tree check.
+
 ### 2026-10-24 20:14 (IST) | chore: initialize repository skeleton, configuration, and documentation
 - Author: PriyanshuKSharma
 - Issue: #1
