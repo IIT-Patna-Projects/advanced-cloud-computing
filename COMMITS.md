@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:46 (IST) | feat: create shopping cart page script module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/cart-page.js
+- What and why: Manage cart page DOM interactions, live quantity adjustments, item removals, coupon discounts, and subtotal/tax computations.
+- How it was verified: Verified with ESLint and tested cart mutation reactivity.
+
 ### 2026-10-24 23:45 (IST) | feat: create shopping cart HTML page
 - Author: PriyanshuKSharma
 - Issue: #4
