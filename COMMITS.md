@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:26 (IST) | feat: create Tailwind CSS source input styles
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/src/input.css
+- What and why: Establish input CSS file with base, component, and utility directives for Tailwind CLI.
+- How it was verified: Successfully compiled to public/css/styles.css via build:css.
+
 ### 2026-10-24 23:26 (IST) | feat: configure Tailwind CSS build pipeline
 - Author: PriyanshuKSharma
 - Issue: #4
