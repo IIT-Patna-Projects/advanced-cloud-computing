@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:24 (IST) | docs: update README with tech badges, interactive guides, and zero emojis
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: README.md
+- What and why: Enrich README with technology badges, collapsible setup guides, endpoint definitions, and zero emojis.
+- How it was verified: Inspected rendered markdown and verified absence of emojis.
+
 ### 2026-10-24 23:23 (IST) | docs: create AI collaboration and proposal log in AI.md
 - Author: PriyanshuKSharma
 - Issue: #4
