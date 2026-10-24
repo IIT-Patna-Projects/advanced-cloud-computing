@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:56 (IST) | feat: update homepage entrypoint with catalog filtering and sorting logic
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/index.js
+- What and why: Bind search input debouncing, category selector pills, sorting dropdowns, and dynamic product card rendering with safe DOM textContent methods.
+- How it was verified: Verified with ESLint and tested interactive filter changes.
+
 ### 2026-10-24 23:55 (IST) | feat: enhance catalog homepage with search filtering and category navigation
 - Author: PriyanshuKSharma
 - Issue: #4
