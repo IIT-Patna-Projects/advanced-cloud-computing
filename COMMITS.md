@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:42 (IST) | test: initialize backend test package
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/tests/__init__.py
+- What and why: Establish package boundary for automated backend tests.
+- How it was verified: Verified pytest test runner discovery.
+
 ### 2026-10-24 22:42 (IST) | feat: create FastAPI application entrypoint with OpenAPI docs
 - Author: PriyanshuKSharma
 - Issue: #5
