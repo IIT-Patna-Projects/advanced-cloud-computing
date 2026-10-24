@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:58 (IST) | docs: log user-visible updates for Stage 4 multipage frontend and GitHub Pages
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: UPDATES.md
+- What and why: Document completion of Stage 4 user-visible additions including 7 e-commerce pages, search, cart, and GitHub Pages deployment.
+- How it was verified: Re-read document to verify formatting and consistency.
+
 ### 2026-10-24 23:57 (IST) | docs: record architectural proposals for multipage storefront and GitHub Pages in AI log
 - Author: PriyanshuKSharma
 - Issue: #4
