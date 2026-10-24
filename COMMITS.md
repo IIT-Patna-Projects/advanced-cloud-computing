@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:41 (IST) | feat: initialize routers package
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/routers/__init__.py
+- What and why: Export health router from routers module.
+- How it was verified: Verified router inclusion in FastAPI app.
+
 ### 2026-10-24 22:40 (IST) | feat: implement health check router and endpoint
 - Author: PriyanshuKSharma
 - Issue: #5
