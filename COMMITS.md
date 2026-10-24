@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:40 (IST) | feat: implement health check router and endpoint
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/routers/health.py, UPDATES.md
+- What and why: Expose GET /health returning operational readiness, app environment, and database connectivity.
+- How it was verified: Verified HTTP 200 and JSON response payload with test client.
+
 ### 2026-10-24 22:40 (IST) | feat: initialize services package
 - Author: PriyanshuKSharma
 - Issue: #5
