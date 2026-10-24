@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:38 (IST) | feat: initialize models package
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/models/__init__.py
+- What and why: Export declarative Base for database models.
+- How it was verified: Verified model importability in python shell.
+
 ### 2026-10-24 22:38 (IST) | feat: configure async sqlalchemy engine and database connectivity probe
 - Author: PriyanshuKSharma
 - Issue: #5
