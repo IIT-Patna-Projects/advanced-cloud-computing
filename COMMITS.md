@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:43 (IST) | test: add unit and integration tests for health and docs endpoints
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/tests/test_health.py
+- What and why: Validate /health and /docs response codes, schemas, and service operational status.
+- How it was verified: `pytest backend/tests` passes 2/2 tests.
+
 ### 2026-10-24 22:43 (IST) | test: create pytest async client fixture in conftest
 - Author: PriyanshuKSharma
 - Issue: #5
