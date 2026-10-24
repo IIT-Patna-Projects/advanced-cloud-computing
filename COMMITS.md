@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:43 (IST) | feat: create product details HTML page
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/product.html
+- What and why: Create dedicated product details page layout with image gallery, SLA metrics, technical specification table, and add-to-cart controls.
+- How it was verified: Verified layout rendering and clean Tailwind utility styling.
+
 ### 2026-10-24 23:42 (IST) | feat: create shared product catalog dataset module
 - Author: PriyanshuKSharma
 - Issue: #4
