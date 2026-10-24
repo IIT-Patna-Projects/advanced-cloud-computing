@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:28 (IST) | feat: implement Express frontend server with reverse proxy and security headers
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/server.js, UPDATES.md
+- What and why: Serve static frontend files, expose /healthz endpoint, set security headers, and proxy /api/* to backend.
+- How it was verified: Verified HTTP 200 on /healthz and tested security headers.
+
 ### 2026-10-24 23:27 (IST) | feat: configure ESLint rules for frontend ES modules
 - Author: PriyanshuKSharma
 - Issue: #4
