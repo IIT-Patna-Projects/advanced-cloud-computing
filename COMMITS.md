@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:37 (IST) | feat: implement backend settings configuration with pydantic-settings
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/config.py
+- What and why: Provide type-safe settings loaded from environment variables and .env with development defaults.
+- How it was verified: Tested configuration instantiation and default parameter retrieval.
+
 ### 2026-10-24 22:37 (IST) | feat: initialize backend app package
 - Author: PriyanshuKSharma
 - Issue: #5
