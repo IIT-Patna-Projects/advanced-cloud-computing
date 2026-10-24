@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:51 (IST) | feat: create user login HTML page
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/login.html
+- What and why: Build authentication sign-in page with email/password inputs, demo account one-click credentials filler, and error alert displays.
+- How it was verified: Verified layout rendering and clean Tailwind utility styling.
+
 ### 2026-10-24 23:50 (IST) | feat: create order history script module
 - Author: PriyanshuKSharma
 - Issue: #4
