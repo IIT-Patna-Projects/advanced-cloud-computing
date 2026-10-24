@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:27 (IST) | feat: configure ESLint rules for frontend ES modules
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/.eslintrc.json
+- What and why: Configure ESLint parser and rules targeting ES2022 module syntax in Node and browser runtimes.
+- How it was verified: Ran npm run lint cleanly with 0 errors.
+
 ### 2026-10-24 23:26 (IST) | feat: create Tailwind CSS source input styles
 - Author: PriyanshuKSharma
 - Issue: #4
