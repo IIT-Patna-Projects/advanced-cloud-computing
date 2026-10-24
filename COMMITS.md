@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:29 (IST) | feat: create frontend client authentication helper module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/auth.js
+- What and why: Manage JWT bearer token persistence and profile storage in browser sessionStorage.
+- How it was verified: Verified with ESLint and session storage helper tests.
+
 ### 2026-10-24 23:28 (IST) | feat: create frontend client API helper module
 - Author: PriyanshuKSharma
 - Issue: #4
