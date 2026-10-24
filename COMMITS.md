@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:25 (IST) | chore: generate frontend package-lock.json
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/package-lock.json
+- What and why: Lock exact versions for frontend Express, Tailwind CLI, and ESLint dependencies.
+- How it was verified: Generated automatically via npm install.
+
 ### 2026-10-24 23:25 (IST) | feat: initialize frontend package.json with dependencies and scripts
 - Author: PriyanshuKSharma
 - Issue: #4
