@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:39 (IST) | feat: define health check response pydantic schema
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/schemas/health.py
+- What and why: Declare strongly typed schema for service status and database readiness metadata.
+- How it was verified: Validated schema serialization in unit test.
+
 ### 2026-10-24 22:38 (IST) | feat: initialize models package
 - Author: PriyanshuKSharma
 - Issue: #5
