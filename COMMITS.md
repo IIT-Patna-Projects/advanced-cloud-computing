@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:53 (IST) | feat: create user registration HTML page
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/register.html
+- What and why: Build new account registration page with name, email, password confirmation, validation rules, and terms agreement checkbox.
+- How it was verified: Verified layout rendering and clean Tailwind utility styling.
+
 ### 2026-10-24 23:52 (IST) | feat: create user login script module
 - Author: PriyanshuKSharma
 - Issue: #4
