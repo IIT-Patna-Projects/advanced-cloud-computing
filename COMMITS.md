@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:48 (IST) | feat: create checkout flow script module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/checkout.js
+- What and why: Validate checkout form fields, execute atomic order creation against /api/orders or local storage fallback, clear cart, and persist order record.
+- How it was verified: Verified with ESLint and simulated order submission.
+
 ### 2026-10-24 23:47 (IST) | feat: create checkout flow HTML page
 - Author: PriyanshuKSharma
 - Issue: #4
