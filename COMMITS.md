@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:48 (IST) | docs: format Stage 2 user-visible updates in UPDATES.md
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: UPDATES.md
+- What and why: Document Stage 2 additions in UPDATES.md following Section 3 title and fields specification.
+- How it was verified: Inspected UPDATES.md content and markdown formatting.
+
 ### 2026-10-24 22:44 (IST) | docs: update milestone M1 status to Done in AGENTS.md
 - Author: PriyanshuKSharma
 - Issue: #5
