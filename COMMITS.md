@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:29 (IST) | feat: create frontend shopping cart management module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/cart.js
+- What and why: Manage shopping cart persistence in localStorage with quantity increments and total calculations.
+- How it was verified: Verified with ESLint and storage helper validation.
+
 ### 2026-10-24 23:29 (IST) | feat: create frontend client authentication helper module
 - Author: PriyanshuKSharma
 - Issue: #4
