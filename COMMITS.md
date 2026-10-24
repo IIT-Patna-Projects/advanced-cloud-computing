@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:39 (IST) | feat: initialize schemas package
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/schemas/__init__.py
+- What and why: Export HealthResponse schema from schemas module.
+- How it was verified: Verified package import in test suite.
+
 ### 2026-10-24 22:39 (IST) | feat: define health check response pydantic schema
 - Author: PriyanshuKSharma
 - Issue: #5
