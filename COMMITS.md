@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:26 (IST) | feat: configure Tailwind CSS build pipeline
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/tailwind.config.js
+- What and why: Configure Tailwind content scanning paths and brand color tokens.
+- How it was verified: Verified Tailwind compiler executes and processes templates.
+
 ### 2026-10-24 23:25 (IST) | chore: generate frontend package-lock.json
 - Author: PriyanshuKSharma
 - Issue: #4
