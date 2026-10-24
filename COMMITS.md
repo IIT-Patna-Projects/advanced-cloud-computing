@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:54 (IST) | feat: create user registration script module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/register.js
+- What and why: Validate registration inputs, submit new user payload to /api/auth/register, handle password match checks, and redirect to login on success.
+- How it was verified: Verified with ESLint and registration form validation logic.
+
 ### 2026-10-24 23:53 (IST) | feat: create user registration HTML page
 - Author: PriyanshuKSharma
 - Issue: #4
