@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:45 (IST) | feat: create shopping cart HTML page
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/cart.html
+- What and why: Build responsive shopping cart page with item line table, coupon code input, cost breakdown summary, and proceed to checkout link.
+- How it was verified: Verified layout rendering and clean Tailwind utility styling.
+
 ### 2026-10-24 23:44 (IST) | feat: create product details script module
 - Author: PriyanshuKSharma
 - Issue: #4
