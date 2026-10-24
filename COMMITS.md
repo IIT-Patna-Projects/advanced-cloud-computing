@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:36 (IST) | chore: add backend development dependencies in requirements-dev.txt
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/requirements-dev.txt
+- What and why: Declare development and testing tools including pytest, pytest-asyncio, httpx, and flake8.
+- How it was verified: Ran flake8 and pytest locally.
+
 ### 2026-10-24 22:36 (IST) | chore: add backend production dependencies in requirements.txt
 - Author: PriyanshuKSharma
 - Issue: #5
