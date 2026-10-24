@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:25 (IST) | feat: initialize frontend package.json with dependencies and scripts
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/package.json
+- What and why: Define Node package manifest, dependencies (express, http-proxy-middleware), devDependencies, and npm scripts.
+- How it was verified: Executed npm install and inspected package scripts.
+
 ### 2026-10-24 23:24 (IST) | docs: update README with tech badges, interactive guides, and zero emojis
 - Author: PriyanshuKSharma
 - Issue: #4
