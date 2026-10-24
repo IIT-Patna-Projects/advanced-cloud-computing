@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:28 (IST) | feat: create frontend client API helper module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/api.js
+- What and why: Provide fetch wrapper routing requests strictly through /api/* with automatic Bearer token injection.
+- How it was verified: Validated with ESLint and simulated client request checks.
+
 ### 2026-10-24 23:28 (IST) | feat: implement Express frontend server with reverse proxy and security headers
 - Author: PriyanshuKSharma
 - Issue: #4
