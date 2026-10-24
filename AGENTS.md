@@ -53,8 +53,8 @@ shopscale/
 ## 5. Milestone status
 | Milestone | Description | Status | Date |
 |---|---|---|---|
-| M0 | Skeleton: Directory structure, base configs, docs, logs | In progress | 2026-10-24 |
-| M1 | Backend: FastAPI core, config, /health, OpenAPI docs | Not started | - |
+| M0 | Skeleton: Directory structure, base configs, docs, logs | Done | 2026-10-24 |
+| M1 | Backend: FastAPI core, config, /health, OpenAPI docs | Done | 2026-10-24 |
 | M2 | Database: MySQL 8.0 models, Alembic migration, seed data | Not started | - |
 | M3 | Frontend: Express proxy, Tailwind CLI, vanilla JS flows | Not started | - |
 | M4 | Tests & CI: Pytest, Playwright, Locust, GitHub Actions | Not started | - |
