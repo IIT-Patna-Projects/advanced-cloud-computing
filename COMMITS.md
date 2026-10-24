@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:43 (IST) | test: create pytest async client fixture in conftest
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/tests/conftest.py
+- What and why: Provide async HTTPX test client fixture bound to FastAPI application via ASGI transport.
+- How it was verified: Verified fixture in test suite execution.
+
 ### 2026-10-24 22:42 (IST) | test: initialize backend test package
 - Author: PriyanshuKSharma
 - Issue: #5
