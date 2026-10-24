@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:30 (IST) | feat: create storefront homepage HTML layout and system health dashboard
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/index.html
+- What and why: Establish semantic HTML5 storefront shell with real-time architectural health probe dashboard, Tailwind layout, and zero emojis.
+- How it was verified: Verified HTTP 200 on root endpoint and clean Tailwind styling compilation.
+
 ### 2026-10-24 23:30 (IST) | feat: create frontend homepage entrypoint script
 - Author: PriyanshuKSharma
 - Issue: #4
