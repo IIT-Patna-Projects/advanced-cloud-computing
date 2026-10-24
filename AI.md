@@ -31,6 +31,16 @@ This document records all AI architectural proposals, design recommendations, an
 - **Rationale**: Enforces consistent enterprise engineering aesthetics across academic and industry presentations.
 - **Adopted**: Yes. Repository-wide standard enforced.
 
+### Multipage E-Commerce Storefront Architecture
+- **AI Proposal**: Implement a comprehensive 7-page e-commerce architecture (`index.html`, `product.html`, `cart.html`, `checkout.html`, `orders.html`, `login.html`, `register.html`) with modular client ES scripts, real-time catalog search/filtering, cart state persistence in localStorage, and simulated checkout flows.
+- **Rationale**: Provides a realistic commercial application footprint for benchmarking cloud auto-scaling, containerization, and static asset offloading on AWS and GitHub Pages.
+- **Adopted**: Yes. Implemented in `frontend/public/` using Tailwind CSS and native ES modules.
+
+### Automated GitHub Pages Hosting Pipeline
+- **AI Proposal**: Configure a GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) triggered on push to `main` that compiles Tailwind CSS assets and deploys `frontend/public` as an interactive static website.
+- **Rationale**: Enables zero-friction online previewing of the storefront for academic review and stakeholder demonstrations without manual server provisioning.
+- **Adopted**: Yes. Configured in `.github/workflows/deploy-pages.yml`.
+
 ---
 
 ## 2. Milestone and Issue Execution History
@@ -39,4 +49,4 @@ This document records all AI architectural proposals, design recommendations, an
 |---|---|---|---|---|
 | 2026-10-24 | #1 | Repository / Docs | Established monorepo directory layout, `.env.example`, `.gitignore`, `CONTRIBUTING.md`, `AGENTS.md`, and record-keeping protocols. | Merged (PR #57) |
 | 2026-10-24 | #5 | Backend Core | Scaffolded FastAPI app, Pydantic Settings configuration, SQLAlchemy 2.0 async engine, `/health` endpoint, `/docs` Swagger UI, and pytest test suite. | Merged (PR #59) |
-| 2026-10-24 | #4 | Frontend Core | Scaffolding Express server, Tailwind v3 CLI pipeline, `/healthz` endpoint, `/api/*` reverse proxy, and vanilla JS client modules (`api.js`, `auth.js`, `cart.js`). | In Progress |
+| 2026-10-24 | #4 | Frontend Core | Built multipage e-commerce storefront (7 pages), Express reverse proxy, Tailwind v3 pipeline, client modules, and GitHub Pages CI/CD workflow. | Completed |

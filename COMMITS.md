@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:57 (IST) | docs: record architectural proposals for multipage storefront and GitHub Pages in AI log
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: AI.md
+- What and why: Document AI architectural proposals including 7-page storefront design, zero emojis policy, and GitHub Pages CI/CD workflow.
+- How it was verified: Re-read document to verify formatting and consistency.
+
 ### 2026-10-24 23:56 (IST) | feat: update homepage entrypoint with catalog filtering and sorting logic
 - Author: PriyanshuKSharma
 - Issue: #4
