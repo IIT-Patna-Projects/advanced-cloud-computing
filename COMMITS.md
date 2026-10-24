@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:40 (IST) | feat: initialize services package
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/services/__init__.py
+- What and why: Establish business logic layer package.
+- How it was verified: Verified package import in python shell.
+
 ### 2026-10-24 22:39 (IST) | feat: initialize schemas package
 - Author: PriyanshuKSharma
 - Issue: #5
