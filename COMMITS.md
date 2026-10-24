@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:44 (IST) | docs: update milestone M1 status to Done in AGENTS.md
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: AGENTS.md
+- What and why: Mark Milestone M0 and M1 as completed in the milestone status table.
+- How it was verified: Inspected milestone table in AGENTS.md.
+
 ### 2026-10-24 22:43 (IST) | test: add unit and integration tests for health and docs endpoints
 - Author: PriyanshuKSharma
 - Issue: #5
