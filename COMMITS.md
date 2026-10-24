@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:42 (IST) | feat: create FastAPI application entrypoint with OpenAPI docs
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/main.py, UPDATES.md
+- What and why: Configure FastAPI app metadata, CORS middleware, OpenAPI docs, and mount health router.
+- How it was verified: Verified Swagger UI at /docs and openapi.json output.
+
 ### 2026-10-24 22:41 (IST) | feat: initialize routers package
 - Author: PriyanshuKSharma
 - Issue: #5
