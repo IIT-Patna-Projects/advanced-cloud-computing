@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:30 (IST) | feat: create frontend homepage entrypoint script
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/index.js
+- What and why: Bootstrap system health probes across frontend and backend services with safe textContent DOM updates.
+- How it was verified: Tested with ESLint and live browser probe against /healthz and /api/health.
+
 ### 2026-10-24 23:29 (IST) | feat: create frontend shopping cart management module
 - Author: PriyanshuKSharma
 - Issue: #4
