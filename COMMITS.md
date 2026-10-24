@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:42 (IST) | feat: create shared product catalog dataset module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/catalog-data.js
+- What and why: Provide client-side product catalog dataset of 12 cloud services with query helper functions for offline fallback and static hosting.
+- How it was verified: Verified with ESLint and catalog helper unit queries.
+
 ### 2026-10-24 23:41 (IST) | ci: add GitHub Actions workflow to deploy frontend to GitHub Pages
 - Author: PriyanshuKSharma
 - Issue: #4
