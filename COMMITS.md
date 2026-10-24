@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:44 (IST) | feat: create product details script module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/product.js
+- What and why: Parse product ID from URL query parameters, fetch details from backend or fallback dataset, and handle quantity updates and cart addition.
+- How it was verified: Verified with ESLint and tested query param parsing.
+
 ### 2026-10-24 23:43 (IST) | feat: create product details HTML page
 - Author: PriyanshuKSharma
 - Issue: #4
