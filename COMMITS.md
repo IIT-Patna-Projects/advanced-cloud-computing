@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:52 (IST) | feat: create user login script module
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: frontend/public/js/login.js
+- What and why: Validate login credentials, submit authentication request to /api/auth/login, persist bearer token in sessionStorage, and redirect on success.
+- How it was verified: Verified with ESLint and simulated auth submission.
+
 ### 2026-10-24 23:51 (IST) | feat: create user login HTML page
 - Author: PriyanshuKSharma
 - Issue: #4
