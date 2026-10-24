@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:36 (IST) | chore: add backend production dependencies in requirements.txt
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/requirements.txt
+- What and why: Declare production dependencies including FastAPI, Uvicorn, Pydantic, SQLAlchemy, aiomysql, and PyMySQL.
+- How it was verified: Verified pip installation and dependency resolution.
+
 ### 2026-10-24 22:35 (IST) | chore: remove backend placeholder gitkeep files
 - Author: PriyanshuKSharma
 - Issue: #5
