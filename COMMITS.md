@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 23:23 (IST) | docs: create AI collaboration and proposal log in AI.md
+- Author: PriyanshuKSharma
+- Issue: #4
+- Branch: 4-feat-scaffold-html-css-js-frontend
+- Files changed: AI.md
+- What and why: Track all AI architectural proposals, recommendations, and decisions taken across milestones.
+- How it was verified: Inspected markdown formatting and section layout in AI.md.
+
 ### 2026-10-24 23:23 (IST) | chore: remove frontend placeholder gitkeep files
 - Author: PriyanshuKSharma
 - Issue: #4
