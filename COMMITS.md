@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-24 22:37 (IST) | feat: initialize backend app package
+- Author: PriyanshuKSharma
+- Issue: #5
+- Branch: 5-feat-scaffold-fastapi-backend
+- Files changed: backend/app/__init__.py
+- What and why: Establish Python package boundary for FastAPI application.
+- How it was verified: Verified package importability.
+
 ### 2026-10-24 22:36 (IST) | chore: add backend development dependencies in requirements-dev.txt
 - Author: PriyanshuKSharma
 - Issue: #5
