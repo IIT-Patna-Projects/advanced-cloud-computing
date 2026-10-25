@@ -5,6 +5,7 @@ Welcome to the ShopScale technical documentation repository.
 ## Documentation Index
 
 - **[Master Implementation Plan](../plan.md)**: Master architectural plan, milestones, and deliverable specifications.
+- **[REST API Contract](API.md)**: Comprehensive OpenAPI specification for catalog, cart, orders, and authentication.
 - **[Architectural Decision Records (ADRs)](decisions/)**:
   - [0001: Use MySQL 8.0 and aiomysql](decisions/0001-use-mysql-and-aiomysql.md)
 - **[Multi-Contributor Guidelines](../AGENTS.md)**: Repository rules, code protection protocols, and commit guidelines.

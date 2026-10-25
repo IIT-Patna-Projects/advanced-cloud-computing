@@ -1,6 +1,38 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 13:33 (IST) | docs: log user-visible updates for Stage 3 REST API contract
+- Author: PriyanshuKSharma
+- Issue: #6
+- Branch: docs/6-api-contract
+- Files changed: UPDATES.md
+- What and why: Document completion of Stage 3 Milestone M0 API contract specification covering all core services and concurrency locking rules.
+- How it was verified: Re-read UPDATES.md to verify formatting and consistency.
+
+### 2026-10-25 13:32 (IST) | docs: record API contract and ACID concurrency proposals in AI log
+- Author: PriyanshuKSharma
+- Issue: #6
+- Branch: docs/6-api-contract
+- Files changed: AI.md
+- What and why: Document AI proposal for unified REST error envelope, catalog query pagination, and row-level ACID locking during checkout surges.
+- How it was verified: Re-read AI.md to verify formatting and consistency.
+
+### 2026-10-25 13:31 (IST) | docs: link API contract specification in technical documentation index
+- Author: PriyanshuKSharma
+- Issue: #6
+- Branch: docs/6-api-contract
+- Files changed: docs/README.md
+- What and why: Add clickable link to docs/API.md in documentation index for developer onboarding and API exploration.
+- How it was verified: Verified markdown link and index layout.
+
+### 2026-10-25 13:30 (IST) | docs: expand API contract with complete schemas, status codes and concurrency locking
+- Author: PriyanshuKSharma
+- Issue: #6
+- Branch: docs/6-api-contract
+- Files changed: docs/API.md
+- What and why: Expand initial API draft with complete REST request/response schemas, standardized error envelope, status codes, and ACID concurrency locking semantics.
+- How it was verified: Re-read document to verify schema consistency against frontend client models and zero emojis standard.
+
 ### 2026-10-24 23:58 (IST) | docs: log user-visible updates for Stage 4 multipage frontend and GitHub Pages
 - Author: PriyanshuKSharma
 - Issue: #4
