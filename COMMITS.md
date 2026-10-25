@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 13:30 (IST) | docs: expand API contract with complete schemas, status codes and concurrency locking
+- Author: PriyanshuKSharma
+- Issue: #6
+- Branch: docs/6-api-contract
+- Files changed: docs/API.md
+- What and why: Expand initial API draft with complete REST request/response schemas, standardized error envelope, status codes, and ACID concurrency locking semantics.
+- How it was verified: Re-read document to verify schema consistency against frontend client models and zero emojis standard.
+
 ### 2026-10-24 23:58 (IST) | docs: log user-visible updates for Stage 4 multipage frontend and GitHub Pages
 - Author: PriyanshuKSharma
 - Issue: #4
