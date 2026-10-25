@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:04 (IST) | feat: register products router in FastAPI application
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/main.py
+- What and why: Mount products_router into the core FastAPI application to expose /products endpoints under Swagger documentation and proxy routes.
+- How it was verified: Verified with flake8 and OpenAPI schema endpoint resolution.
+
 ### 2026-10-25 14:03 (IST) | feat: create products router with list and detail endpoints
 - Author: PriyanshuKSharma
 - Issue: #13
