@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:10 (IST) | fix: add sqlalchemy asyncio extra and greenlet dependency to requirements
+- Author: PriyanshuKSharma
+- Issue: #7
+- Branch: feat/13-product-api
+- Files changed: backend/requirements.txt
+- What and why: Specify sqlalchemy[asyncio] and add explicit greenlet dependency to resolve CI ImportError during pytest in GitHub Actions environment.
+- How it was verified: Validated pip dependency resolution and verified pytest runs cleanly.
+
 ### 2026-10-25 14:07 (IST) | docs: log user-visible updates for Stage 3 product catalog API
 - Author: PriyanshuKSharma
 - Issue: #13
