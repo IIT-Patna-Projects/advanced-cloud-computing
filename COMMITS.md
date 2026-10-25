@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:06 (IST) | docs: record resilient product catalog service architecture in AI log
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: AI.md
+- What and why: Document AI architectural proposal for resilient catalog query execution and seed fallback strategy in AI collaboration log.
+- How it was verified: Re-read AI.md to verify formatting and consistency.
+
 ### 2026-10-25 14:05 (IST) | test: add unit and integration test suite for product catalog API
 - Author: PriyanshuKSharma
 - Issue: #13

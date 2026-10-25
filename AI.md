@@ -46,6 +46,11 @@ This document records all AI architectural proposals, design recommendations, an
 - **Rationale**: Prevents race conditions and inventory overselling during concurrent load surges on AWS, aligns frontend proxy endpoints with FastAPI routers, and ensures deterministic error handling across all client modules.
 - **Adopted**: Yes. Integrated into `docs/API.md` incorporating teammate Garima's initial outline.
 
+### Resilient Catalog Service with In-Memory Seed Fallback
+- **AI Proposal**: Implement `ProductService` to query MySQL 8.0 via SQLAlchemy 2.0 with dynamic SQL filters (`ilike` text search, category equality, order_by, and offset/limit pagination), with automatic fallback to an in-memory seed catalog if the database table is unpopulated or unreachable.
+- **Rationale**: Eliminates hard dependency on external MySQL containers during local unit test suites (`pytest`) and early developer workflows while ensuring exact schema and contract parity with the database model.
+- **Adopted**: Yes. Implemented in `backend/app/services/product_service.py` and `backend/app/routers/products.py`.
+
 ---
 
 ## 2. Milestone and Issue Execution History
@@ -55,4 +60,6 @@ This document records all AI architectural proposals, design recommendations, an
 | 2026-10-24 | #1 | Repository / Docs | Established monorepo directory layout, `.env.example`, `.gitignore`, `CONTRIBUTING.md`, `AGENTS.md`, and record-keeping protocols. | Merged (PR #57) |
 | 2026-10-24 | #5 | Backend Core | Scaffolded FastAPI app, Pydantic Settings configuration, SQLAlchemy 2.0 async engine, `/health` endpoint, `/docs` Swagger UI, and pytest test suite. | Merged (PR #59) |
 | 2026-10-24 | #4 | Frontend Core | Built multipage e-commerce storefront (7 pages), Express reverse proxy, Tailwind v3 pipeline, client modules, and GitHub Pages CI/CD workflow. | Merged (PR #60) |
-| 2026-10-25 | #6 | Architecture / Docs | Drafted comprehensive REST API contract in `docs/API.md` with standardized error schemas, catalog pagination, cart lifecycle, and ACID checkout row-locking. | Completed |
+| 2026-10-25 | #6 | Architecture / Docs | Drafted comprehensive REST API contract in `docs/API.md` with standardized error schemas, catalog pagination, cart lifecycle, and ACID checkout row-locking. | Merged (PR #63) |
+| 2026-10-25 | #7 | CI/CD Automation | Created parallel GitHub Actions CI workflow in `.github/workflows/ci.yml` executing backend tests/lint and frontend build/lint. | Completed |
+| 2026-10-25 | #13 | Backend / Products | Built GET /products and GET /products/{id} with filtering, sorting, pagination, SQLAlchemy model, and test suite. | Completed |
