@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:07 (IST) | docs: log user-visible updates for Stage 3 product catalog API
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: UPDATES.md
+- What and why: Document completion of Stage 3 product catalog endpoints, pagination filtering, and test suite verification.
+- How it was verified: Re-read UPDATES.md to verify formatting and consistency.
+
 ### 2026-10-25 14:06 (IST) | docs: record resilient product catalog service architecture in AI log
 - Author: PriyanshuKSharma
 - Issue: #13
