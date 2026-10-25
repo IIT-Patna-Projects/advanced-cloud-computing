@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:12 (IST) | fix: install greenlet and sqlalchemy asyncio extra in backend requirements
+- Author: PriyanshuKSharma
+- Issue: #7
+- Branch: fix/greenlet-ci-dependency
+- Files changed: backend/requirements.txt
+- What and why: Add greenlet>=3.0.0 and sqlalchemy[asyncio] to backend requirements to resolve CI pipeline ImportError when loading async engine during pytest.
+- How it was verified: Validated pip dependency installation and pytest execution on Linux runner.
+
 ### 2026-10-25 13:43 (IST) | docs: record decoupled parallel CI pipeline architecture in AI log
 - Author: PriyanshuKSharma
 - Issue: #7
