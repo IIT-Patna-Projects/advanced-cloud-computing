@@ -46,6 +46,11 @@ This document records all AI architectural proposals, design recommendations, an
 - **Rationale**: Prevents race conditions and inventory overselling during concurrent load surges on AWS, aligns frontend proxy endpoints with FastAPI routers, and ensures deterministic error handling across all client modules.
 - **Adopted**: Yes. Integrated into `docs/API.md` incorporating teammate Garima's initial outline.
 
+### Decoupled Parallel CI Pipeline Architecture
+- **AI Proposal**: Implement dual parallel GitHub Actions jobs (`backend` and `frontend`) in `.github/workflows/ci.yml` with dependency caching (`pip` and `npm`) and cancel-in-progress concurrency groups.
+- **Rationale**: Prevents frontend style changes from blocking backend test cycles, ensures fail-fast feedback on pull requests, and validates that neither service's dependencies or linters regress.
+- **Adopted**: Yes. Configured in `.github/workflows/ci.yml`.
+
 ### Resilient Catalog Service with In-Memory Seed Fallback
 - **AI Proposal**: Implement `ProductService` to query MySQL 8.0 via SQLAlchemy 2.0 with dynamic SQL filters (`ilike` text search, category equality, order_by, and offset/limit pagination), with automatic fallback to an in-memory seed catalog if the database table is unpopulated or unreachable.
 - **Rationale**: Eliminates hard dependency on external MySQL containers during local unit test suites (`pytest`) and early developer workflows while ensuring exact schema and contract parity with the database model.

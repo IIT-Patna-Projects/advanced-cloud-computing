@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:12 (IST) | fix: install greenlet and sqlalchemy asyncio extra in backend requirements
+- Author: PriyanshuKSharma
+- Issue: #7
+- Branch: fix/greenlet-ci-dependency
+- Files changed: backend/requirements.txt
+- What and why: Add greenlet>=3.0.0 and sqlalchemy[asyncio] to backend requirements to resolve CI pipeline ImportError when loading async engine during pytest.
+- How it was verified: Validated pip dependency installation and pytest execution on Linux runner.
+
 ### 2026-10-25 14:10 (IST) | fix: add sqlalchemy asyncio extra and greenlet dependency to requirements
 - Author: PriyanshuKSharma
 - Issue: #7
@@ -72,6 +80,22 @@ Chronological record of every commit made to the repository, ordered newest firs
 - Files changed: backend/app/models/product.py, backend/app/models/__init__.py
 - What and why: Implement SQLAlchemy 2.0 Product model with DECIMAL(10, 2) price, JSON specs, explicit VARCHAR lengths, and export in models package.
 - How it was verified: Verified with flake8 and SQLAlchemy Base registry inspection.
+
+### 2026-10-25 13:43 (IST) | docs: record decoupled parallel CI pipeline architecture in AI log
+- Author: PriyanshuKSharma
+- Issue: #7
+- Branch: chore/7-ci-workflow
+- Files changed: AI.md
+- What and why: Document AI proposal for decoupled backend and frontend jobs, dependency caching, and fail-fast validation in AI collaboration log.
+- How it was verified: Re-read AI.md to verify formatting and consistency.
+
+### 2026-10-25 13:42 (IST) | ci: add GitHub Actions workflow for backend tests and frontend build
+- Author: PriyanshuKSharma
+- Issue: #7
+- Branch: chore/7-ci-workflow
+- Files changed: .github/workflows/ci.yml
+- What and why: Establish automated GitHub Actions CI pipeline running parallel backend and frontend jobs on pull requests and pushes to main.
+- How it was verified: Validated YAML syntax against GitHub Actions schema and verified local test/lint parity.
 
 ### 2026-10-25 13:33 (IST) | docs: log user-visible updates for Stage 3 REST API contract
 - Author: PriyanshuKSharma
