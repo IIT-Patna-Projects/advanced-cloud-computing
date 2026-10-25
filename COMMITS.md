@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:00 (IST) | feat: create product catalog SQLAlchemy model
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/models/product.py, backend/app/models/__init__.py
+- What and why: Implement SQLAlchemy 2.0 Product model with DECIMAL(10, 2) price, JSON specs, explicit VARCHAR lengths, and export in models package.
+- How it was verified: Verified with flake8 and SQLAlchemy Base registry inspection.
+
 ### 2026-10-25 13:33 (IST) | docs: log user-visible updates for Stage 3 REST API contract
 - Author: PriyanshuKSharma
 - Issue: #6
