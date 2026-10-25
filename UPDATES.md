@@ -1,6 +1,17 @@
 # Updates
 Log of user-visible features, behavioral changes, and fixes, ordered newest first.
 
+### 2026-10-25 - Milestone M0: Comprehensive REST API Contract (Done)
+- Files modified: docs/API.md, docs/README.md, AI.md
+- Summary:
+  - Formulated official REST API contract in docs/API.md establishing OpenAPI request and response schemas for all core services.
+  - Specified endpoints for System Health, Customer Authentication (JWT), Catalog with pagination, Shopping Cart, ACID Orders, and Admin management.
+  - Standardized JSON error response envelope across all HTTP status codes (400, 401, 403, 404, 409, 422, 500).
+  - Defined explicit database row-locking protocol (SELECT ... FOR UPDATE) for concurrent checkout stock decrements under MySQL InnoDB.
+  - Integrated initial draft from collaborator Garima Sharma with bilateral review and sign-off block.
+- Verification: Re-read docs/API.md, verified schema consistency with frontend modules, 0 emoji violations.
+- Issue: #6
+
 ### 2026-10-24 - Stage 4: Frontend Scaffolding, Multipage Storefront & GitHub Pages (Done)
 - Files modified: frontend/public/*.html, frontend/public/js/*, .github/workflows/deploy-pages.yml, AI.md, README.md
 - Summary:
