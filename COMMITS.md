@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 13:33 (IST) | docs: log user-visible updates for Stage 3 REST API contract
+- Author: PriyanshuKSharma
+- Issue: #6
+- Branch: docs/6-api-contract
+- Files changed: UPDATES.md
+- What and why: Document completion of Stage 3 Milestone M0 API contract specification covering all core services and concurrency locking rules.
+- How it was verified: Re-read UPDATES.md to verify formatting and consistency.
+
 ### 2026-10-25 13:32 (IST) | docs: record API contract and ACID concurrency proposals in AI log
 - Author: PriyanshuKSharma
 - Issue: #6
