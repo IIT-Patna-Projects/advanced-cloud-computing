@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:01 (IST) | feat: create product catalog Pydantic schemas
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/schemas/product.py, backend/app/schemas/__init__.py
+- What and why: Establish Pydantic v2 schemas for product responses, creation, updates, and paginated list containers.
+- How it was verified: Verified schema validation rules with pytest and flake8.
+
 ### 2026-10-25 14:00 (IST) | feat: create product catalog SQLAlchemy model
 - Author: PriyanshuKSharma
 - Issue: #13
