@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 13:42 (IST) | ci: add GitHub Actions workflow for backend tests and frontend build
+- Author: PriyanshuKSharma
+- Issue: #7
+- Branch: chore/7-ci-workflow
+- Files changed: .github/workflows/ci.yml
+- What and why: Establish automated GitHub Actions CI pipeline running parallel backend and frontend jobs on pull requests and pushes to main.
+- How it was verified: Validated YAML syntax against GitHub Actions schema and verified local test/lint parity.
+
 ### 2026-10-25 13:33 (IST) | docs: log user-visible updates for Stage 3 REST API contract
 - Author: PriyanshuKSharma
 - Issue: #6
