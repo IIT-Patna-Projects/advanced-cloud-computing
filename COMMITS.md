@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:05 (IST) | test: add unit and integration test suite for product catalog API
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/tests/test_products.py
+- What and why: Add 8 comprehensive pytest test cases covering list pagination, search queries, category filters, price sorting, detail retrieval, 404 errors, and OpenAPI schema validation.
+- How it was verified: Ran pytest backend/tests with 10 passed in 0.64s.
+
 ### 2026-10-25 14:04 (IST) | feat: register products router in FastAPI application
 - Author: PriyanshuKSharma
 - Issue: #13
