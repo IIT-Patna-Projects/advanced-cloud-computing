@@ -1,6 +1,22 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:21 (IST) | fix: restrict ci workflow token permissions
+- Author: copilot-swe-agent[bot]
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: .github/workflows/ci.yml
+- What and why: Add explicit least-privilege `permissions: contents: read` to CI workflow to satisfy workflow security checks and reduce GitHub token scope.
+- How it was verified: Re-ran codeql_checker with 0 alerts.
+
+### 2026-10-25 14:20 (IST) | chore: merge origin/main and resolve conflicts in logs
+- Author: copilot-swe-agent[bot]
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: .github/workflows/ci.yml, AI.md, COMMITS.md
+- What and why: Merged `origin/main` into feature branch and resolved content conflicts by preserving both CI and product API documentation histories.
+- How it was verified: Confirmed merge commit has two parents and ran backend tests/lint plus frontend lint.
+
 ### 2026-10-25 14:12 (IST) | fix: install greenlet and sqlalchemy asyncio extra in backend requirements
 - Author: PriyanshuKSharma
 - Issue: #7
@@ -8,6 +24,78 @@ Chronological record of every commit made to the repository, ordered newest firs
 - Files changed: backend/requirements.txt
 - What and why: Add greenlet>=3.0.0 and sqlalchemy[asyncio] to backend requirements to resolve CI pipeline ImportError when loading async engine during pytest.
 - How it was verified: Validated pip dependency installation and pytest execution on Linux runner.
+
+### 2026-10-25 14:10 (IST) | fix: add sqlalchemy asyncio extra and greenlet dependency to requirements
+- Author: PriyanshuKSharma
+- Issue: #7
+- Branch: feat/13-product-api
+- Files changed: backend/requirements.txt
+- What and why: Specify sqlalchemy[asyncio] and add explicit greenlet dependency to resolve CI ImportError during pytest in GitHub Actions environment.
+- How it was verified: Validated pip dependency resolution and verified pytest runs cleanly.
+
+### 2026-10-25 14:07 (IST) | docs: log user-visible updates for Stage 3 product catalog API
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: UPDATES.md
+- What and why: Document completion of Stage 3 product catalog endpoints, pagination filtering, and test suite verification.
+- How it was verified: Re-read UPDATES.md to verify formatting and consistency.
+
+### 2026-10-25 14:06 (IST) | docs: record resilient product catalog service architecture in AI log
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: AI.md
+- What and why: Document AI architectural proposal for resilient catalog query execution and seed fallback strategy in AI collaboration log.
+- How it was verified: Re-read AI.md to verify formatting and consistency.
+
+### 2026-10-25 14:05 (IST) | test: add unit and integration test suite for product catalog API
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/tests/test_products.py
+- What and why: Add 8 comprehensive pytest test cases covering list pagination, search queries, category filters, price sorting, detail retrieval, 404 errors, and OpenAPI schema validation.
+- How it was verified: Ran pytest backend/tests with 10 passed in 0.64s.
+
+### 2026-10-25 14:04 (IST) | feat: register products router in FastAPI application
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/main.py
+- What and why: Mount products_router into the core FastAPI application to expose /products endpoints under Swagger documentation and proxy routes.
+- How it was verified: Verified with flake8 and OpenAPI schema endpoint resolution.
+
+### 2026-10-25 14:03 (IST) | feat: create products router with list and detail endpoints
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/routers/products.py, backend/app/routers/__init__.py
+- What and why: Define GET /products with search, category, sort, and pagination query params, and GET /products/{product_id} returning 404 on missing entity.
+- How it was verified: Verified with flake8 and OpenAPI schema path inspection.
+
+### 2026-10-25 14:02 (IST) | feat: create product catalog service with query filters and seed fallback
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/services/product_service.py, backend/app/services/__init__.py
+- What and why: Implement ProductService with MySQL query execution, keyword search, category filtering, sorting, pagination, and deterministic in-memory seed catalog fallback.
+- How it was verified: Verified with flake8 and test suite querying both filtered and single product items.
+
+### 2026-10-25 14:01 (IST) | feat: create product catalog Pydantic schemas
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/schemas/product.py, backend/app/schemas/__init__.py
+- What and why: Establish Pydantic v2 schemas for product responses, creation, updates, and paginated list containers.
+- How it was verified: Verified schema validation rules with pytest and flake8.
+
+### 2026-10-25 14:00 (IST) | feat: create product catalog SQLAlchemy model
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/models/product.py, backend/app/models/__init__.py
+- What and why: Implement SQLAlchemy 2.0 Product model with DECIMAL(10, 2) price, JSON specs, explicit VARCHAR lengths, and export in models package.
+- How it was verified: Verified with flake8 and SQLAlchemy Base registry inspection.
 
 ### 2026-10-25 13:43 (IST) | docs: record decoupled parallel CI pipeline architecture in AI log
 - Author: PriyanshuKSharma

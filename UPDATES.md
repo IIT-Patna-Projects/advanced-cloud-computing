@@ -1,6 +1,17 @@
 # Updates
 Log of user-visible features, behavioral changes, and fixes, ordered newest first.
 
+### 2026-10-25 - Product Catalog API: List, Search, Filter, and Details (Done)
+- Files modified: backend/app/models/product.py, backend/app/schemas/product.py, backend/app/services/product_service.py, backend/app/routers/products.py, backend/app/main.py, backend/tests/test_products.py
+- Summary:
+  - Implemented GET /products endpoint with keyword search, category filtering, price/name sorting, and pagination controls.
+  - Implemented GET /products/{id} endpoint returning detailed specifications, SLA commitment, and stock availability.
+  - Added SQLAlchemy 2.0 Product model with DECIMAL(10, 2) price precision and JSON hardware specifications.
+  - Built resilient ProductService querying active MySQL session with deterministic in-memory seed catalog fallback.
+  - Created comprehensive test suite verifying pagination boundaries, search query filtering, detail resolution, and 404 responses.
+- Verification: 10 tests passed in pytest (0.64s), flake8 passed with 0 errors, 0 emoji violations.
+- Issue: #13
+
 ### 2026-10-25 - Milestone M0: Comprehensive REST API Contract (Done)
 - Files modified: docs/API.md, docs/README.md, AI.md
 - Summary:
