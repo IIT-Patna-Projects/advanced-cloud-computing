@@ -1,6 +1,22 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:21 (IST) | fix: restrict ci workflow token permissions
+- Author: copilot-swe-agent[bot]
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: .github/workflows/ci.yml
+- What and why: Add explicit least-privilege `permissions: contents: read` to CI workflow to satisfy workflow security checks and reduce GitHub token scope.
+- How it was verified: Re-ran codeql_checker with 0 alerts.
+
+### 2026-10-25 14:20 (IST) | chore: merge origin/main and resolve conflicts in logs
+- Author: copilot-swe-agent[bot]
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: .github/workflows/ci.yml, AI.md, COMMITS.md
+- What and why: Merged `origin/main` into feature branch and resolved content conflicts by preserving both CI and product API documentation histories.
+- How it was verified: Confirmed merge commit has two parents and ran backend tests/lint plus frontend lint.
+
 ### 2026-10-25 14:12 (IST) | fix: install greenlet and sqlalchemy asyncio extra in backend requirements
 - Author: PriyanshuKSharma
 - Issue: #7
