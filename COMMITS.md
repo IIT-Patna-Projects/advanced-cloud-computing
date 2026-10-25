@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 13:32 (IST) | docs: record API contract and ACID concurrency proposals in AI log
+- Author: PriyanshuKSharma
+- Issue: #6
+- Branch: docs/6-api-contract
+- Files changed: AI.md
+- What and why: Document AI proposal for unified REST error envelope, catalog query pagination, and row-level ACID locking during checkout surges.
+- How it was verified: Re-read AI.md to verify formatting and consistency.
+
 ### 2026-10-25 13:31 (IST) | docs: link API contract specification in technical documentation index
 - Author: PriyanshuKSharma
 - Issue: #6
