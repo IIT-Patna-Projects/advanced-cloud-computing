@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:02 (IST) | feat: create product catalog service with query filters and seed fallback
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/services/product_service.py, backend/app/services/__init__.py
+- What and why: Implement ProductService with MySQL query execution, keyword search, category filtering, sorting, pagination, and deterministic in-memory seed catalog fallback.
+- How it was verified: Verified with flake8 and test suite querying both filtered and single product items.
+
 ### 2026-10-25 14:01 (IST) | feat: create product catalog Pydantic schemas
 - Author: PriyanshuKSharma
 - Issue: #13
