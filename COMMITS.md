@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 13:31 (IST) | docs: link API contract specification in technical documentation index
+- Author: PriyanshuKSharma
+- Issue: #6
+- Branch: docs/6-api-contract
+- Files changed: docs/README.md
+- What and why: Add clickable link to docs/API.md in documentation index for developer onboarding and API exploration.
+- How it was verified: Verified markdown link and index layout.
+
 ### 2026-10-25 13:30 (IST) | docs: expand API contract with complete schemas, status codes and concurrency locking
 - Author: PriyanshuKSharma
 - Issue: #6
