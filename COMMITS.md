@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 13:43 (IST) | docs: record decoupled parallel CI pipeline architecture in AI log
+- Author: PriyanshuKSharma
+- Issue: #7
+- Branch: chore/7-ci-workflow
+- Files changed: AI.md
+- What and why: Document AI proposal for decoupled backend and frontend jobs, dependency caching, and fail-fast validation in AI collaboration log.
+- How it was verified: Re-read AI.md to verify formatting and consistency.
+
 ### 2026-10-25 13:42 (IST) | ci: add GitHub Actions workflow for backend tests and frontend build
 - Author: PriyanshuKSharma
 - Issue: #7

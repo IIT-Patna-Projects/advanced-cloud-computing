@@ -46,6 +46,11 @@ This document records all AI architectural proposals, design recommendations, an
 - **Rationale**: Prevents race conditions and inventory overselling during concurrent load surges on AWS, aligns frontend proxy endpoints with FastAPI routers, and ensures deterministic error handling across all client modules.
 - **Adopted**: Yes. Integrated into `docs/API.md` incorporating teammate Garima's initial outline.
 
+### Decoupled Parallel CI Pipeline Architecture
+- **AI Proposal**: Implement dual parallel GitHub Actions jobs (`backend` and `frontend`) in `.github/workflows/ci.yml` with dependency caching (`pip` and `npm`) and cancel-in-progress concurrency groups.
+- **Rationale**: Prevents frontend style changes from blocking backend test cycles, ensures fail-fast feedback on pull requests, and validates that neither service's dependencies or linters regress.
+- **Adopted**: Yes. Configured in `.github/workflows/ci.yml`.
+
 ---
 
 ## 2. Milestone and Issue Execution History
@@ -55,4 +60,5 @@ This document records all AI architectural proposals, design recommendations, an
 | 2026-10-24 | #1 | Repository / Docs | Established monorepo directory layout, `.env.example`, `.gitignore`, `CONTRIBUTING.md`, `AGENTS.md`, and record-keeping protocols. | Merged (PR #57) |
 | 2026-10-24 | #5 | Backend Core | Scaffolded FastAPI app, Pydantic Settings configuration, SQLAlchemy 2.0 async engine, `/health` endpoint, `/docs` Swagger UI, and pytest test suite. | Merged (PR #59) |
 | 2026-10-24 | #4 | Frontend Core | Built multipage e-commerce storefront (7 pages), Express reverse proxy, Tailwind v3 pipeline, client modules, and GitHub Pages CI/CD workflow. | Merged (PR #60) |
-| 2026-10-25 | #6 | Architecture / Docs | Drafted comprehensive REST API contract in `docs/API.md` with standardized error schemas, catalog pagination, cart lifecycle, and ACID checkout row-locking. | Completed |
+| 2026-10-25 | #6 | Architecture / Docs | Drafted comprehensive REST API contract in `docs/API.md` with standardized error schemas, catalog pagination, cart lifecycle, and ACID checkout row-locking. | Merged (PR #63) |
+| 2026-10-25 | #7 | CI/CD Automation | Created parallel GitHub Actions CI workflow in `.github/workflows/ci.yml` executing backend tests/lint and frontend build/lint. | Completed |
