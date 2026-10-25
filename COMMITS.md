@@ -1,6 +1,14 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-25 14:03 (IST) | feat: create products router with list and detail endpoints
+- Author: PriyanshuKSharma
+- Issue: #13
+- Branch: feat/13-product-api
+- Files changed: backend/app/routers/products.py, backend/app/routers/__init__.py
+- What and why: Define GET /products with search, category, sort, and pagination query params, and GET /products/{product_id} returning 404 on missing entity.
+- How it was verified: Verified with flake8 and OpenAPI schema path inspection.
+
 ### 2026-10-25 14:02 (IST) | feat: create product catalog service with query filters and seed fallback
 - Author: PriyanshuKSharma
 - Issue: #13
