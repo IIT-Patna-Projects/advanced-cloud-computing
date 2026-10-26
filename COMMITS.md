@@ -1,6 +1,110 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-26 20:38 (IST) | docs: log commit series for issue 15 authentication API
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: COMMITS.md
+- What and why: Document atomic commit sequence for user authentication, password hashing, JWT sessions, and test suites.
+- How it was verified: Re-read COMMITS.md to verify structure and chronological consistency.
+
+### 2026-10-26 20:37 (IST) | docs: log user-visible updates for authentication API
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: UPDATES.md
+- What and why: Document user-visible additions of POST /auth/register, POST /auth/login, and GET /auth/me endpoints.
+- How it was verified: Re-read UPDATES.md to verify formatting and zero emoji compliance.
+
+### 2026-10-26 20:36 (IST) | docs: record authentication architecture and proposal in ai log
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: AI.md
+- What and why: Record architectural proposal for bcrypt password hashing, stateless JWT session tokens, and fallback testing resilience in AI log.
+- How it was verified: Re-read AI.md to verify table formatting and content consistency.
+
+### 2026-10-26 20:35 (IST) | test: add unit and integration test suite for authentication endpoints
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/tests/test_auth.py
+- What and why: Add 10 comprehensive pytest test cases validating user registration, duplicate email conflict, validation constraints, login token generation, and /auth/me authentication.
+- How it was verified: Ran pytest backend/tests with 20 passed in 1.59s.
+
+### 2026-10-26 20:34 (IST) | feat: register auth_router in FastAPI application
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/app/main.py
+- What and why: Mount auth_router into the primary FastAPI application instance.
+- How it was verified: Verified router inclusion in app.routes and OpenAPI schema.
+
+### 2026-10-26 20:33 (IST) | feat: export auth_router in routers package
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/app/routers/__init__.py
+- What and why: Expose auth_router in the routers package __all__ manifest.
+- How it was verified: Verified clean package import.
+
+### 2026-10-26 20:32 (IST) | feat: create auth router with register, login, and me endpoints
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/app/routers/auth.py
+- What and why: Implement POST /register, POST /login, and GET /me route handlers returning standardized error envelopes on validation and auth failures.
+- How it was verified: Ran flake8 and pytest test suite.
+
+### 2026-10-26 20:31 (IST) | feat: implement AuthService with bcrypt hashing, JWT issuance, and fallback store
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/app/services/auth_service.py
+- What and why: Build authentication service providing bcrypt hash generation, password verification, JWT creation/decoding, and resilient database/in-memory user lookup.
+- How it was verified: Validated with unit tests and flake8 linter.
+
+### 2026-10-26 20:30 (IST) | feat: export auth schemas in schemas package
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/app/schemas/__init__.py
+- What and why: Expose UserRegister, UserLogin, UserResponse, and TokenResponse in schemas __all__ manifest.
+- How it was verified: Verified clean package import.
+
+### 2026-10-26 20:29 (IST) | feat: create Pydantic schemas for registration, login, and tokens
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/app/schemas/auth.py
+- What and why: Define Pydantic v2 schemas with email format regex, minimum 8 character password constraint, and token response models.
+- How it was verified: Verified schema validation behavior in pytest.
+
+### 2026-10-26 20:28 (IST) | feat: export User model in models package
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/app/models/__init__.py
+- What and why: Expose User model in models package __all__ manifest.
+- How it was verified: Verified clean package import.
+
+### 2026-10-26 20:27 (IST) | feat: create SQLAlchemy 2.0 User model with role support
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/app/models/user.py
+- What and why: Create User entity with VARCHAR(255) constraints on email and hashed_password, and boolean is_admin role flag.
+- How it was verified: Ran flake8 and verified table mapping.
+
+### 2026-10-26 20:26 (IST) | feat: add bcrypt and PyJWT dependencies to backend requirements
+- Author: PriyanshuKSharma
+- Issue: #15
+- Branch: feat/15-auth-api
+- Files changed: backend/requirements.txt
+- What and why: Add bcrypt>=4.0.0 and PyJWT>=2.6.0 dependencies for secure password hashing and stateless token issuance.
+- How it was verified: Verified package availability and imports.
+
 ### 2026-10-26 20:12 (IST) | docs: log commit series for issue 14 product pages
 - Author: PriyanshuKSharma
 - Issue: #14
