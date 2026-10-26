@@ -56,6 +56,11 @@ This document records all AI architectural proposals, design recommendations, an
 - **Rationale**: Eliminates hard dependency on external MySQL containers during local unit test suites (`pytest`) and early developer workflows while ensuring exact schema and contract parity with the database model.
 - **Adopted**: Yes. Implemented in `backend/app/services/product_service.py` and `backend/app/routers/products.py`.
 
+### Frontend Live API Integration with Skeletons and Offline Resilience
+- **AI Proposal**: Connect `index.js` and `product.js` to the live Express proxy (`/api/products` and `/api/products/{id}`) with animated loading skeletons, debounced search (250ms), AbortController request cancellation, and automatic fallback to client-side catalog data if the API is unreachable.
+- **Rationale**: Provides smooth perceived performance with zero layout shift during asynchronous data fetching, protects the backend against search input query flooding, and guarantees full offline usability for GitHub Pages static deployments.
+- **Adopted**: Yes. Implemented in `frontend/public/js/index.js` and `frontend/public/js/product.js`.
+
 ---
 
 ## 2. Milestone and Issue Execution History
@@ -68,3 +73,4 @@ This document records all AI architectural proposals, design recommendations, an
 | 2026-10-25 | #6 | Architecture / Docs | Drafted comprehensive REST API contract in `docs/API.md` with standardized error schemas, catalog pagination, cart lifecycle, and ACID checkout row-locking. | Merged (PR #63) |
 | 2026-10-25 | #7 | CI/CD Automation | Created parallel GitHub Actions CI workflow in `.github/workflows/ci.yml` executing backend tests/lint and frontend build/lint. | Completed |
 | 2026-10-25 | #13 | Backend / Products | Built GET /products and GET /products/{id} with filtering, sorting, pagination, SQLAlchemy model, and test suite. | Completed |
+| 2026-10-26 | #14 | Frontend / Products | Connected catalog and detail pages to live API with animated loading skeletons, debounced search, error banners, and offline fallback. | Completed |

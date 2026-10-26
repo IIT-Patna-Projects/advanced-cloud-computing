@@ -1,6 +1,17 @@
 # Updates
 Log of user-visible features, behavioral changes, and fixes, ordered newest first.
 
+### 2026-10-26 - Product Catalog & Details API Integration with Skeletons and Offline Resilience (Done)
+- Files modified: frontend/public/js/index.js, frontend/public/js/product.js
+- Summary:
+  - Connected storefront homepage catalog grid to GET /api/products with dynamic search, category filtering, and sorting.
+  - Added animated loading skeleton placeholders across product listing cards and detail page specifications table.
+  - Implemented 250ms debounced search input with AbortController in-flight request cancellation.
+  - Built resilient error banner and automatic fallback to client-side catalog data for offline and GitHub Pages deployments.
+  - Connected product detail view to GET /api/products/:id with 404 error state and return-to-catalog navigation.
+- Verification: npm run lint passed with 0 errors, build:css compiled in 1021ms, 10 pytest tests passed in 0.46s, 0 emoji violations.
+- Issue: #14
+
 ### 2026-10-25 - Product Catalog API: List, Search, Filter, and Details (Done)
 - Files modified: backend/app/models/product.py, backend/app/schemas/product.py, backend/app/services/product_service.py, backend/app/routers/products.py, backend/app/main.py, backend/tests/test_products.py
 - Summary:
