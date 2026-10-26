@@ -1,6 +1,46 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-26 20:12 (IST) | docs: log commit series for issue 14 product pages
+- Author: PriyanshuKSharma
+- Issue: #14
+- Branch: feat/14-product-pages
+- Files changed: COMMITS.md
+- What and why: Document atomic commit entries for catalog and detail page API integration, skeletons, debouncing, and resilience.
+- How it was verified: Re-read COMMITS.md to verify formatting and chronological consistency.
+
+### 2026-10-26 20:11 (IST) | docs: log user-visible updates for product catalog and detail pages
+- Author: PriyanshuKSharma
+- Issue: #14
+- Branch: feat/14-product-pages
+- Files changed: UPDATES.md
+- What and why: Document user-visible additions of live API catalog queries, animated skeletons, debounced search, error banners, and product detail loading.
+- How it was verified: Re-read UPDATES.md to verify structure and zero emoji compliance.
+
+### 2026-10-26 20:10 (IST) | docs: record frontend api integration and offline resilience in ai log
+- Author: PriyanshuKSharma
+- Issue: #14
+- Branch: feat/14-product-pages
+- Files changed: AI.md
+- What and why: Record architectural proposal and adoption for frontend API queries, skeleton loading placeholders, and offline resilience in AI collaboration log.
+- How it was verified: Re-read AI.md to verify table formatting and content consistency.
+
+### 2026-10-26 20:09 (IST) | feat: connect product detail page to live api with loading and not found states
+- Author: PriyanshuKSharma
+- Issue: #14
+- Branch: feat/14-product-pages
+- Files changed: frontend/public/js/product.js
+- What and why: Update initProductDetails to fetch from /api/products/:id with animated skeleton loading for schematic, title, price, and specs, plus 404 error state with return-to-catalog action.
+- How it was verified: Ran npm --prefix frontend run lint (0 errors) and build:css (compiled in 1021ms).
+
+### 2026-10-26 20:08 (IST) | feat: connect catalog page to live products api with skeletons and debounced search
+- Author: PriyanshuKSharma
+- Issue: #14
+- Branch: feat/14-product-pages
+- Files changed: frontend/public/js/index.js
+- What and why: Update catalog homepage to fetch from /api/products with animated skeleton cards, 250ms debounced search, AbortController request cancellation, and offline fallback notice.
+- How it was verified: Ran npm --prefix frontend run lint (0 errors) and build:css (compiled in 1021ms).
+
 ### 2026-10-25 14:21 (IST) | fix: restrict ci workflow token permissions
 - Author: copilot-swe-agent[bot]
 - Issue: #13
