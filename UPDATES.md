@@ -1,6 +1,17 @@
 # Updates
 Log of user-visible features, behavioral changes, and fixes, ordered newest first.
 
+### 2026-10-26 - Customer Registration, Login & Safe JWT Sessions API (Done)
+- Files modified: backend/requirements.txt, backend/app/models/user.py, backend/app/schemas/auth.py, backend/app/services/auth_service.py, backend/app/routers/auth.py, backend/app/main.py, backend/tests/test_auth.py
+- Summary:
+  - Implemented POST /auth/register endpoint with email validation, password length constraint (>=8 chars), and duplicate conflict detection (409 Conflict).
+  - Implemented POST /auth/login endpoint verifying bcrypt credentials and issuing signed stateless JWT access tokens (24h expiry).
+  - Implemented GET /auth/me endpoint returning current authenticated user profile using Bearer token verification.
+  - Built SQLAlchemy 2.0 User model with explicit VARCHAR constraints and role support (is_admin).
+  - Created resilient AuthService with bcrypt hashing, JWT issuance/validation, and in-memory test store fallback.
+- Verification: 20 passed in pytest (1.59s), flake8 passed with 0 errors, 0 emoji violations.
+- Issue: #15
+
 ### 2026-10-26 - Product Catalog & Details API Integration with Skeletons and Offline Resilience (Done)
 - Files modified: frontend/public/js/index.js, frontend/public/js/product.js
 - Summary:
