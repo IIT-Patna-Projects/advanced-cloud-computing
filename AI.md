@@ -61,6 +61,11 @@ This document records all AI architectural proposals, design recommendations, an
 - **Rationale**: Provides smooth perceived performance with zero layout shift during asynchronous data fetching, protects the backend against search input query flooding, and guarantees full offline usability for GitHub Pages static deployments.
 - **Adopted**: Yes. Implemented in `frontend/public/js/index.js` and `frontend/public/js/product.js`.
 
+### Bcrypt Password Hashing and Stateless JWT Authentication
+- **AI Proposal**: Implement `User` model, `AuthService` with salted bcrypt password hashing (`rounds=12`), and stateless JWT token issuance (`HS256`, 24-hour expiration) with fallback in-memory store for offline/testing resilience.
+- **Rationale**: Eliminates server-side session state for horizontal auto-scaling on AWS, securely hashes credentials before database persistence, and allows independent local unit testing without active MySQL containers.
+- **Adopted**: Yes. Implemented in `backend/app/services/auth_service.py` and `backend/app/routers/auth.py`.
+
 ---
 
 ## 2. Milestone and Issue Execution History
@@ -73,4 +78,6 @@ This document records all AI architectural proposals, design recommendations, an
 | 2026-10-25 | #6 | Architecture / Docs | Drafted comprehensive REST API contract in `docs/API.md` with standardized error schemas, catalog pagination, cart lifecycle, and ACID checkout row-locking. | Merged (PR #63) |
 | 2026-10-25 | #7 | CI/CD Automation | Created parallel GitHub Actions CI workflow in `.github/workflows/ci.yml` executing backend tests/lint and frontend build/lint. | Completed |
 | 2026-10-25 | #13 | Backend / Products | Built GET /products and GET /products/{id} with filtering, sorting, pagination, SQLAlchemy model, and test suite. | Completed |
-| 2026-10-26 | #14 | Frontend / Products | Connected catalog and detail pages to live API with animated loading skeletons, debounced search, error banners, and offline fallback. | Completed |
+| 2026-10-26 | #14 | Frontend / Products | Connected catalog and detail pages to live API with animated loading skeletons, debounced search, error banners, and offline fallback. | Merged (PR #72) |
+| 2026-10-26 | #15 | Backend / Auth | Built User model, bcrypt hashing, JWT issuance, /auth/register, /auth/login, /auth/me, and comprehensive test suite. | Completed |
+
