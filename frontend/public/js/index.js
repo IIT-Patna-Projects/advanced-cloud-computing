@@ -13,6 +13,8 @@ import { queryCatalog } from "./catalog-data.js";
 let currentCategory = "all";
 let currentSearch = "";
 let currentSort = "featured";
+let searchDebounceTimer = null;
+let activeAbortController = null;
 
 /**
  * Display a temporary non-blocking toast notification.
@@ -88,13 +90,14 @@ function createProductCard(product) {
 
   const badgeSpan = document.createElement("span");
   badgeSpan.className = "inline-block px-2 py-0.5 font-semibold text-indigo-700 bg-indigo-50 border border-indigo-100 rounded";
-  badgeSpan.textContent = product.badge;
+  badgeSpan.textContent = product.badge || "Tier";
 
+  const stockCount = typeof product.stock === "number" ? product.stock : 0;
   const stockSpan = document.createElement("span");
-  stockSpan.className = product.stock > 20
+  stockSpan.className = stockCount > 20
     ? "font-medium text-emerald-700"
     : "font-medium text-amber-700";
-  stockSpan.textContent = product.stock > 0 ? `Stock: ${product.stock}` : "Backorder";
+  stockSpan.textContent = stockCount > 0 ? `Stock: ${stockCount}` : "Backorder";
 
   headerDiv.appendChild(badgeSpan);
   headerDiv.appendChild(stockSpan);
@@ -128,10 +131,11 @@ function createProductCard(product) {
   priceDiv.className = "flex flex-col";
   const priceSpan = document.createElement("span");
   priceSpan.className = "text-lg font-bold text-slate-900";
-  priceSpan.textContent = `$${product.price.toFixed(2)}`;
+  const numPrice = typeof product.price === "number" ? product.price : parseFloat(product.price || "0");
+  priceSpan.textContent = `$${isNaN(numPrice) ? "0.00" : numPrice.toFixed(2)}`;
   const slaSpan = document.createElement("span");
   slaSpan.className = "text-[10px] text-slate-400 font-mono";
-  slaSpan.textContent = product.sla;
+  slaSpan.textContent = product.sla || "99.99%";
   priceDiv.appendChild(priceSpan);
   priceDiv.appendChild(slaSpan);
 
@@ -166,41 +170,240 @@ function createProductCard(product) {
 }
 
 /**
- * Render catalog cards based on active filtering and search parameters.
+ * Render loading skeleton placeholders in the product catalog grid.
  *
+ * @param {HTMLElement} container - Catalog grid container element.
+ * @param {number} [count=8] - Number of skeleton cards to render.
  * @returns {void}
  */
-function renderCatalog() {
+function renderSkeletons(container, count = 8) {
+  container.textContent = "";
+  for (let i = 0; i < count; i++) {
+    const card = document.createElement("div");
+    card.className = "bg-white rounded-xl border border-slate-200 p-5 space-y-4 animate-pulse flex flex-col justify-between";
+
+    const header = document.createElement("div");
+    header.className = "flex items-center justify-between";
+    const badge = document.createElement("div");
+    badge.className = "h-4 w-16 bg-slate-200 rounded";
+    const stock = document.createElement("div");
+    stock.className = "h-3 w-14 bg-slate-200 rounded";
+    header.appendChild(badge);
+    header.appendChild(stock);
+
+    const body = document.createElement("div");
+    body.className = "space-y-2";
+    const title = document.createElement("div");
+    title.className = "h-4 w-3/4 bg-slate-200 rounded";
+    const sku = document.createElement("div");
+    sku.className = "h-3 w-1/3 bg-slate-200 rounded";
+    const desc1 = document.createElement("div");
+    desc1.className = "h-3 w-full bg-slate-200 rounded";
+    const desc2 = document.createElement("div");
+    desc2.className = "h-3 w-4/5 bg-slate-200 rounded";
+    body.appendChild(title);
+    body.appendChild(sku);
+    body.appendChild(desc1);
+    body.appendChild(desc2);
+
+    const footer = document.createElement("div");
+    footer.className = "pt-4 border-t border-slate-100 flex items-center justify-between";
+    const price = document.createElement("div");
+    price.className = "h-5 w-16 bg-slate-200 rounded";
+    const btn = document.createElement("div");
+    btn.className = "h-7 w-20 bg-slate-200 rounded-lg";
+    footer.appendChild(price);
+    footer.appendChild(btn);
+
+    card.appendChild(header);
+    card.appendChild(body);
+    card.appendChild(footer);
+
+    container.appendChild(card);
+  }
+}
+
+/**
+ * Render an empty state notice in the catalog container.
+ *
+ * @param {HTMLElement} container - Grid container element.
+ * @param {string} [title="No products found matching your filter."] - Primary title.
+ * @param {string} [subtitle="Try adjusting your search terms or selecting another category."] - Secondary text.
+ * @returns {void}
+ */
+function renderEmptyState(container, title = "No products found matching your filter.", subtitle = "Try adjusting your search terms or selecting another category.") {
+  container.textContent = "";
+  const emptyDiv = document.createElement("div");
+  emptyDiv.className = "col-span-full py-12 text-center text-slate-500 space-y-2";
+
+  const p1 = document.createElement("p");
+  p1.className = "text-base font-semibold text-slate-700";
+  p1.textContent = title;
+
+  const p2 = document.createElement("p");
+  p2.className = "text-xs text-slate-400";
+  p2.textContent = subtitle;
+
+  emptyDiv.appendChild(p1);
+  emptyDiv.appendChild(p2);
+  container.appendChild(emptyDiv);
+}
+
+/**
+ * Render an error state banner with a retry action in the product catalog grid.
+ *
+ * @param {HTMLElement} container - Catalog grid container element.
+ * @param {string} errorMessage - Error description to display.
+ * @param {() => void} retryCallback - Handler to invoke on retry.
+ * @returns {void}
+ */
+function renderErrorState(container, errorMessage, retryCallback) {
+  const errorBanner = document.createElement("div");
+  errorBanner.className = "col-span-full p-4 mb-4 rounded-xl border border-rose-200 bg-rose-50 text-rose-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs";
+
+  const textDiv = document.createElement("div");
+  textDiv.className = "flex items-center space-x-2";
+
+  const iconSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  iconSvg.setAttribute("class", "w-4 h-4 text-rose-600 flex-shrink-0");
+  iconSvg.setAttribute("viewBox", "0 0 24 24");
+  iconSvg.setAttribute("fill", "none");
+  iconSvg.setAttribute("stroke", "currentColor");
+  iconSvg.setAttribute("stroke-width", "2");
+  iconSvg.setAttribute("stroke-linecap", "round");
+  iconSvg.setAttribute("stroke-linejoin", "round");
+  const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  circle.setAttribute("cx", "12");
+  circle.setAttribute("cy", "12");
+  circle.setAttribute("r", "10");
+  const line1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  line1.setAttribute("x1", "12");
+  line1.setAttribute("y1", "8");
+  line1.setAttribute("x2", "12");
+  line1.setAttribute("y2", "12");
+  const line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  line2.setAttribute("x1", "12");
+  line2.setAttribute("y1", "16");
+  line2.setAttribute("x2", "12.01");
+  line2.setAttribute("y2", "16");
+  iconSvg.appendChild(circle);
+  iconSvg.appendChild(line1);
+  iconSvg.appendChild(line2);
+
+  const span = document.createElement("span");
+  span.textContent = `API Notice: ${errorMessage}. Displaying cached local catalog.`;
+
+  textDiv.appendChild(iconSvg);
+  textDiv.appendChild(span);
+
+  const retryBtn = document.createElement("button");
+  retryBtn.className = "px-3 py-1 font-semibold rounded bg-rose-600 text-white hover:bg-rose-700 transition-colors flex-shrink-0";
+  retryBtn.textContent = "Retry API";
+  retryBtn.addEventListener("click", () => {
+    retryCallback();
+  });
+
+  errorBanner.appendChild(textDiv);
+  errorBanner.appendChild(retryBtn);
+
+  container.prepend(errorBanner);
+}
+
+/**
+ * Load and render catalog products asynchronously from the backend API.
+ * Falls back to offline client data if the API is unreachable.
+ *
+ * @returns {Promise<void>}
+ */
+export async function loadCatalog() {
   const container = document.getElementById("product-grid");
   const countLabel = document.getElementById("catalog-result-count");
   if (!container) return;
 
-  container.textContent = "";
-
-  const products = queryCatalog(currentCategory, currentSearch, currentSort);
-
+  renderSkeletons(container, 8);
   if (countLabel) {
-    countLabel.textContent = `Showing ${products.length} product${products.length === 1 ? "" : "s"}`;
+    countLabel.textContent = "Fetching catalog products...";
   }
 
-  if (products.length === 0) {
-    const emptyDiv = document.createElement("div");
-    emptyDiv.className = "col-span-full py-12 text-center text-slate-500 space-y-2";
-    const p1 = document.createElement("p");
-    p1.className = "text-base font-semibold text-slate-700";
-    p1.textContent = "No products found matching your filter.";
-    const p2 = document.createElement("p");
-    p2.className = "text-xs text-slate-400";
-    p2.textContent = "Try adjusting your search terms or selecting another category.";
-    emptyDiv.appendChild(p1);
-    emptyDiv.appendChild(p2);
-    container.appendChild(emptyDiv);
-    return;
+  if (activeAbortController) {
+    activeAbortController.abort();
   }
+  activeAbortController = new AbortController();
 
-  products.forEach((product) => {
-    container.appendChild(createProductCard(product));
-  });
+  const queryParams = new URLSearchParams();
+  if (currentCategory && currentCategory !== "all") {
+    queryParams.set("category", currentCategory);
+  }
+  if (currentSearch && currentSearch.trim()) {
+    queryParams.set("search", currentSearch.trim());
+  }
+  if (currentSort) {
+    queryParams.set("sort", currentSort);
+  }
+  queryParams.set("page", "1");
+  queryParams.set("limit", "24");
+
+  try {
+    const data = await apiRequest(`/products?${queryParams.toString()}`, {
+      signal: activeAbortController.signal
+    });
+
+    container.textContent = "";
+
+    const items = Array.isArray(data.items) ? data.items : [];
+    const totalCount = typeof data.total === "number" ? data.total : items.length;
+
+    if (countLabel) {
+      countLabel.textContent = `Showing ${totalCount} product${totalCount === 1 ? "" : "s"}`;
+    }
+
+    if (items.length === 0) {
+      renderEmptyState(container);
+      return;
+    }
+
+    items.forEach((item) => {
+      const normalized = {
+        id: item.id,
+        sku: item.sku,
+        title: item.title,
+        description: item.description,
+        category: item.category,
+        categoryName: item.category_name || item.categoryName,
+        badge: item.badge,
+        price: typeof item.price === "number" ? item.price : parseFloat(item.price || "0"),
+        stock: item.stock,
+        sla: item.sla,
+        specs: item.specs || {},
+        longDescription: item.long_description || item.longDescription || item.description
+      };
+      container.appendChild(createProductCard(normalized));
+    });
+  } catch (error) {
+    if (error && error.name === "AbortError") {
+      return;
+    }
+    const message = error instanceof Error ? error.message : "Network error";
+    container.textContent = "";
+
+    const fallbackProducts = queryCatalog(currentCategory, currentSearch, currentSort);
+    if (countLabel) {
+      countLabel.textContent = `Showing ${fallbackProducts.length} product${fallbackProducts.length === 1 ? "" : "s"} (Offline Mode)`;
+    }
+
+    renderErrorState(container, message, () => {
+      loadCatalog();
+    });
+
+    if (fallbackProducts.length === 0) {
+      renderEmptyState(container, "No products found in local cache.", "Check backend API connectivity and retry.");
+      return;
+    }
+
+    fallbackProducts.forEach((product) => {
+      container.appendChild(createProductCard(product));
+    });
+  }
 }
 
 /**
@@ -274,7 +477,7 @@ function setupCategoryFilters() {
         }
       });
 
-      renderCatalog();
+      loadCatalog();
     });
   });
 }
@@ -285,21 +488,26 @@ function setupCategoryFilters() {
  * @returns {void}
  */
 function setupSearchListener() {
-  const input = document.getElementById("search-input");
+  const input = /** @type {HTMLInputElement|null} */ (document.getElementById("search-input"));
   if (input) {
     input.addEventListener("input", (e) => {
       const target = /** @type {HTMLInputElement} */ (e.target);
       currentSearch = target.value;
-      renderCatalog();
+      if (searchDebounceTimer) {
+        clearTimeout(searchDebounceTimer);
+      }
+      searchDebounceTimer = setTimeout(() => {
+        loadCatalog();
+      }, 250);
     });
   }
 
-  const sortSelect = document.getElementById("sort-select");
+  const sortSelect = /** @type {HTMLSelectElement|null} */ (document.getElementById("sort-select"));
   if (sortSelect) {
     sortSelect.addEventListener("change", (e) => {
       const target = /** @type {HTMLSelectElement} */ (e.target);
       currentSort = target.value;
-      renderCatalog();
+      loadCatalog();
     });
   }
 }
@@ -310,5 +518,5 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartBadge();
   setupCategoryFilters();
   setupSearchListener();
-  renderCatalog();
+  loadCatalog();
 });
