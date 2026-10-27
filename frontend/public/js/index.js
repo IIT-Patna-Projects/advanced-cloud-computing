@@ -7,6 +7,7 @@
  */
 
 import { apiRequest } from "./api.js";
+import { setupNavAuth } from "./auth.js";
 import { addToCart, getCartItemCount } from "./cart.js";
 import { queryCatalog } from "./catalog-data.js";
 
@@ -514,9 +515,11 @@ function setupSearchListener() {
 
 // Bootstrap on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
+  setupNavAuth();
   checkSystemHealth();
   updateCartBadge();
   setupCategoryFilters();
   setupSearchListener();
   loadCatalog();
 });
+

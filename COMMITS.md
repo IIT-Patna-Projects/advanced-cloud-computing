@@ -1,6 +1,78 @@
 # Commit log
 Chronological record of every commit made to the repository, ordered newest first.
 
+### 2026-10-27 20:33 (IST) | docs: log commit series for issue 16 auth UI
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: COMMITS.md
+- What and why: Document atomic commit entries for login, registration forms, session handling, and navigation bar auth states.
+- How it was verified: Re-read COMMITS.md to verify formatting and chronological consistency.
+
+### 2026-10-27 20:32 (IST) | docs: log user-visible updates for authentication UI
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: UPDATES.md
+- What and why: Document user-visible additions of live login/register API calls, loading indicators, error banners, and nav profile display.
+- How it was verified: Re-read UPDATES.md to verify formatting and zero emoji compliance.
+
+### 2026-10-27 20:31 (IST) | docs: record authentication UI and session navigation in ai log
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: AI.md
+- What and why: Record architectural proposal and adoption for client-side form validation, error banners, and dynamic navbar state in AI collaboration log.
+- How it was verified: Re-read AI.md to verify table formatting and content consistency.
+
+### 2026-10-27 20:30 (IST) | feat: bind dynamic navigation auth state on product detail page
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: frontend/public/js/product.js
+- What and why: Invoke setupNavAuth on DOM ready to dynamically render authenticated customer profile on detail page.
+- How it was verified: Ran npm --prefix frontend run lint (0 errors).
+
+### 2026-10-27 20:29 (IST) | feat: bind dynamic navigation auth state on catalog homepage
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: frontend/public/js/index.js
+- What and why: Invoke setupNavAuth on DOM ready to dynamically render authenticated customer profile on storefront homepage.
+- How it was verified: Ran npm --prefix frontend run lint (0 errors).
+
+### 2026-10-27 20:28 (IST) | feat: connect registration form to live auth api with input validations
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: frontend/public/js/register.js
+- What and why: Connect registration form to POST /api/auth/register with client-side checks for email regex, 8+ char password, password matching, and loading button state.
+- How it was verified: Ran npm --prefix frontend run lint (0 errors).
+
+### 2026-10-27 20:27 (IST) | feat: connect login form to live auth api with loading and error states
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: frontend/public/js/login.js
+- What and why: Connect login form to POST /api/auth/login with credential autofill, loading indicator, token storage, and post-registration confirmation banner.
+- How it was verified: Ran npm --prefix frontend run lint (0 errors).
+
+### 2026-10-27 20:26 (IST) | feat: add setupNavAuth, fetchCurrentUser, and logout helpers to auth module
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: frontend/public/js/auth.js
+- What and why: Implement setupNavAuth for replacing Sign In link with user badge and logout button, and fetchCurrentUser for token verification against /api/auth/me.
+- How it was verified: Ran npm --prefix frontend run lint (0 errors).
+
+### 2026-10-27 20:25 (IST) | feat: update demo credentials badge in login markup
+- Author: PriyanshuKSharma
+- Issue: #16
+- Branch: feat/16-auth-ui
+- Files changed: frontend/public/login.html
+- What and why: Update demo credential hint text in login markup to match seeded backend credentials customer@example.com / SecurePassword123.
+- How it was verified: Verified markup consistency with backend seed data.
+
 ### 2026-10-26 20:38 (IST) | docs: log commit series for issue 15 authentication API
 - Author: PriyanshuKSharma
 - Issue: #15

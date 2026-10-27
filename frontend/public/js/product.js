@@ -7,9 +7,11 @@
  */
 
 import { apiRequest } from "./api.js";
+import { setupNavAuth } from "./auth.js";
 import { addToCart, getCartItemCount } from "./cart.js";
 import { getProductById } from "./catalog-data.js";
 import { showToast, updateCartBadge } from "./index.js";
+
 
 /**
  * Extract product ID from URL query parameters.
@@ -313,9 +315,11 @@ export async function initProductDetails() {
 
 // Bootstrap on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
+  setupNavAuth();
   const badge = document.getElementById("nav-cart-count");
   if (badge) {
     badge.textContent = String(getCartItemCount());
   }
   initProductDetails();
 });
+
