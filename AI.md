@@ -66,6 +66,11 @@ This document records all AI architectural proposals, design recommendations, an
 - **Rationale**: Eliminates server-side session state for horizontal auto-scaling on AWS, securely hashes credentials before database persistence, and allows independent local unit testing without active MySQL containers.
 - **Adopted**: Yes. Implemented in `backend/app/services/auth_service.py` and `backend/app/routers/auth.py`.
 
+### Reactive Authentication UI & Session Navigation State
+- **AI Proposal**: Wire `login.js` and `register.js` to live `/api/auth` endpoints with client validation, inline error banners, loading indicators, and dynamic navbar state (`setupNavAuth()`) displaying authenticated user identity and logout action.
+- **Rationale**: Provides clear real-time user feedback, prevents malformed requests from reaching the backend, and maintains consistent authentication awareness across storefront pages.
+- **Adopted**: Yes. Implemented in `frontend/public/js/auth.js`, `frontend/public/js/login.js`, and `frontend/public/js/register.js`.
+
 ---
 
 ## 2. Milestone and Issue Execution History
@@ -79,5 +84,7 @@ This document records all AI architectural proposals, design recommendations, an
 | 2026-10-25 | #7 | CI/CD Automation | Created parallel GitHub Actions CI workflow in `.github/workflows/ci.yml` executing backend tests/lint and frontend build/lint. | Completed |
 | 2026-10-25 | #13 | Backend / Products | Built GET /products and GET /products/{id} with filtering, sorting, pagination, SQLAlchemy model, and test suite. | Completed |
 | 2026-10-26 | #14 | Frontend / Products | Connected catalog and detail pages to live API with animated loading skeletons, debounced search, error banners, and offline fallback. | Merged (PR #72) |
-| 2026-10-26 | #15 | Backend / Auth | Built User model, bcrypt hashing, JWT issuance, /auth/register, /auth/login, /auth/me, and comprehensive test suite. | Completed |
+| 2026-10-26 | #15 | Backend / Auth | Built User model, bcrypt hashing, JWT issuance, /auth/register, /auth/login, /auth/me, and comprehensive test suite. | Merged (PR #73) |
+| 2026-10-27 | #16 | Frontend / Auth UI | Connected login and registration forms to /api/auth, added inline validation, loading states, error banners, and nav profile controls. | Completed |
+
 
