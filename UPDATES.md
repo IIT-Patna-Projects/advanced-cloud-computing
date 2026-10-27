@@ -1,6 +1,17 @@
 # Updates
 Log of user-visible features, behavioral changes, and fixes, ordered newest first.
 
+### 2026-10-27 - Reactive Authentication UI, Safe Sessions & Navigation State (Done)
+- Files modified: frontend/public/login.html, frontend/public/js/auth.js, frontend/public/js/login.js, frontend/public/js/register.js, frontend/public/js/index.js, frontend/public/js/product.js
+- Summary:
+  - Connected login form to POST /api/auth/login with credential autofill, loading state indicator, and error banners.
+  - Connected registration form to POST /api/auth/register with client-side validations (email format, password matching, length >=8).
+  - Implemented dynamic navigation bar profile indicator (setupNavAuth) rendering customer name and sign-out controls.
+  - Added post-registration notice banner on login page confirming account creation.
+  - Maintained safe session storage persistence and seamless logout redirect.
+- Verification: npm run lint passed with 0 errors, build:css compiled in 1127ms, 20 pytest tests passed in 2.02s, 0 emoji violations.
+- Issue: #16
+
 ### 2026-10-26 - Customer Registration, Login & Safe JWT Sessions API (Done)
 - Files modified: backend/requirements.txt, backend/app/models/user.py, backend/app/schemas/auth.py, backend/app/services/auth_service.py, backend/app/routers/auth.py, backend/app/main.py, backend/tests/test_auth.py
 - Summary:
